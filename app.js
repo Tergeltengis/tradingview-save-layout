@@ -29,14 +29,10 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/1.1/charts", upload.none(), (req, res) => {
-  console.log(req.query);
-  console.log(req.body);
-
   res.json({ status: "ok", data: req.body });
 });
 
 app.get("/1.1/charts", (req, res) => {
-  console.log(req.query);
   const { chart, client, user } = req.query;
   if (chart) {
     res.json({
